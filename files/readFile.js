@@ -2,15 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 // read a file and log out the data
-// fs.readFile('example.txt', 'utf8', (data, err) => {
-//   if (err) {
-//     console.log(err);
-//   }
-//   // a null terminator will be logged out last if we don't truthy-check data
-//   if (data) {
-//     console.log('We got some data back!');
-//   }
-// });
+fs.readFile('example.txt', 'utf8', (data, err) => {
+  if (err) {
+    console.log(err);
+  }
+  // a null terminator will be logged out last if we don't truthy-check data
+  if (data) {
+    console.log('We got some data back!');
+  }
+});
 
 
 // Using fs.read();
@@ -21,7 +21,6 @@ const readStream = fs.createReadStream('./src/example.txt', {
 });
 
 // We can listen for tons of events!
-
 // the open event is only for a readStream
 readStream.on('open', () => {
   console.log('Opened file!');
@@ -41,16 +40,16 @@ readStream.on('close', () => {
   console.log("We're done with this file!");
 });
 
-// const src = fs.createReadStream('example.txt', {
-//   encoding: 'utf8',
-// });
-//
-// const dest = fs.createWriteStream('example-copy.txt', {
-//   encoding: 'utf8',
-// });
+const src = fs.createReadStream('example.txt', {
+  encoding: 'utf8',
+});
+
+const dest = fs.createWriteStream('example-copy.txt', {
+  encoding: 'utf8',
+});
 
 // Using streams to read and write files
-// src.pipe(dest);
+src.pipe(dest);
 
 // maybe we can create a file copy method?
 
