@@ -8,17 +8,17 @@ class Monster {
     this[healthSymbol] = health;
   }
   get isAlive() {
-    return this[health] > 0;
+    return this[healthSymbol] > 0;
   }
   set alive(alive) {
     if (!alive) {
-      this[health] = 0;
+      this[healthSymbol] = 0;
     }
   }
 }
 
 const monster = new Monster('mark', 100);
-
+console.log(monster);
 class Sully extends Monster {
   constructor(name, health) {
     super(name, health);
