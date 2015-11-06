@@ -42,7 +42,7 @@ const obj2 = Object.create(obj1);
 console.log(obj1.foo); // 1
 console.log(obj2.foo); // because it's delegated to the prototype chain for lookup
 try {
-  console.log(obj2 instanceof obj1); // won't check because
+  console.log(obj2 instanceof obj1); // doesn't check the constructor
 } catch (err) {
   console.error(err);
 }
