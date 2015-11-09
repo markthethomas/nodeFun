@@ -32,7 +32,6 @@ a1.identify(); // with !, because it's now pointing at
 // function's name. The value is only read-only for primitive values
 // such as 1, true and "test".
 
-
 const obj1 = {
   foo: 1,
   bar: 2,
