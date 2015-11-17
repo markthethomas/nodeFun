@@ -9,7 +9,6 @@ function* generator() {
 
 const myGen = generator();
 
-
 for (let value of myGen) {
   console.log(value);
 }
